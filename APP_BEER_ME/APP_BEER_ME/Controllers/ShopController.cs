@@ -110,12 +110,12 @@ namespace APP_BEER_ME.Controllers
             {
                 ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator.";
             }
-            Stock stock = db.Stocks.Find(id);
-            if (stock == null)
+            Shop shop = db.Shops.Find(id);
+            if (shop == null)
             {
                 return HttpNotFound();
             }
-            return View(stock);
+            return View(shop);
         }
 
 
