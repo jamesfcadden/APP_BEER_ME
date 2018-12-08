@@ -13,7 +13,6 @@ namespace APP_BEER_ME.Models
         public string Name { get; set; }
         public string Style { get; set; }
         public string Brand { get; set; }
-
         public string Brewery { get; set; }
         public Container Container { get; set; }
         [Display(Name = "Volume (ml)")]

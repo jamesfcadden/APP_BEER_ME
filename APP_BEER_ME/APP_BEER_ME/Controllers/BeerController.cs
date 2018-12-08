@@ -18,9 +18,17 @@ namespace APP_BEER_ME.Controllers
         private APP_BEER_MEContext db = new APP_BEER_MEContext();
 
         // GET: Beer
-        public ActionResult Index()
+        public ViewResult Index(string searchstring)
         {
-            return View(db.Beers.ToList());
+            var beers = from b in db.Beers
+                        select b;
+
+            if (!String.IsNullOrEmpty(searchstring))
+            {
+                beers = beers.Where(b => b.Name.Contains(searchstring) || b.Style.Contains(searchstring));
+            }
+
+            return View(beers.ToList());
         }
 
         // GET: Beer/Details/5

@@ -13,6 +13,7 @@ namespace APP_BEER_ME.Models
         public int BeerID { get; set; }
         public int ShopID { get; set; }
         [Display(Name = "Price (€)")]
+        [DataType(DataType.Currency)]
         public double Price { get; set; }        
 
         public virtual Beer Beer { get; set; }
