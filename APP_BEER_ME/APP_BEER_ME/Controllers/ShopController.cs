@@ -49,15 +49,22 @@ namespace APP_BEER_ME.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ShopID,ShopName,ShopAddress")] Shop shop)
+        public ActionResult Create([Bind(Include = "Shop Name, Shop Address")]Shop shop)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Shops.Add(shop);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Shops.Add(shop);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-
+            catch (DataException /* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+            }
             return View(shop);
         }
 
