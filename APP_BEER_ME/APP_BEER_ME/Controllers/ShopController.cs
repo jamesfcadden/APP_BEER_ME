@@ -100,28 +100,41 @@ namespace APP_BEER_ME.Controllers
         }
 
         // GET: Shop/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Shop shop = db.Shops.Find(id);
-            if (shop == null)
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewBag.ErrorMessage = "Delete failed. Try again, and if the problem persists see your system administrator.";
+            }
+            Stock stock = db.Stocks.Find(id);
+            if (stock == null)
             {
                 return HttpNotFound();
             }
-            return View(shop);
+            return View(stock);
         }
 
+
         // POST: Shop/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
-            Shop shop = db.Shops.Find(id);
-            db.Shops.Remove(shop);
-            db.SaveChanges();
+            try
+            {
+                Shop shop = db.Shops.Find(id);
+                db.Shops.Remove(shop);
+                db.SaveChanges();
+            }
+            catch (DataException/* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                return RedirectToAction("Delete", new { id = id, saveChangesError = true });
+            }
             return RedirectToAction("Index");
         }
 
