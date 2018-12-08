@@ -15,7 +15,7 @@ namespace APP_BEER_ME.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "We are three beer enthusiasts.";
 
             return View();
         }

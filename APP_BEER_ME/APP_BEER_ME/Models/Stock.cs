@@ -13,6 +13,7 @@ namespace APP_BEER_ME.Models
         public int BeerID { get; set; }
         public int ShopID { get; set; }
         public double Price { get; set; }
+        public double PricePerUnit { get; set; }
 
         public virtual Beer Beer { get; set; }
         public virtual Shop Shop { get; set; }
