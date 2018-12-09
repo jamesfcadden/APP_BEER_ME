@@ -49,7 +49,7 @@ namespace APP_BEER_ME.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Shop Name, Shop Address")]Shop shop)
+        public ActionResult Create([Bind(Include = "ShopName, ShopAddress")]Shop shop)
         {
             try
             {
