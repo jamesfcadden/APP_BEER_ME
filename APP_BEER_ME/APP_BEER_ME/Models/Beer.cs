@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -24,7 +25,7 @@ namespace APP_BEER_ME.Models
         [Display(Name = "Volume (ml)")]
         public int Volume { get; set; }
         [Required(ErrorMessage = "The ABV field is required ! ")]
-        public double ABV { get; set; }
+        public double ABV { get; set; }       
 
         public virtual ICollection<Stock> Stocks { get; set; }
     }
