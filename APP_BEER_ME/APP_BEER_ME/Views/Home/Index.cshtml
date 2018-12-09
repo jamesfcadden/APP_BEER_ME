@@ -5,10 +5,12 @@
 <div class="jumbotron">
     <h1>BEERME!</h1>
    
-    <img src="~/images/CanYouBeerMeNow.jpg" alt="header" width="1000" height="600" />
-
+    <img src="~/images/CanYouBeerMeNow.jpg" alt="header" width="1000" height="600"  />
+    b
+    <p></p>
     <p class="lead">BEERME! is the best way to get bladdered on a budget!</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+    <p><a class="btn btn-home" href="@Url.Action("About", "Home")">Learn More &raquo;</a></p>
 </div>
 
 <div class="row">
@@ -17,16 +19,16 @@
         <p>
             Beers from all over the world!
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-home" href="@Url.Action("About", "Home")">Learn More &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Shops</h2>
         <p>Suds stockists in your suburb!</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <p><a class="btn btn-home" href="@Url.Action("Create", "Shop")">Add a Shop &raquo;</a></p>
     </div>
     <div class="col-md-4">
         <h2>Check Prices</h2>
         <p>Punch publicans with our prices!</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <p><a class="btn btn-home" href="@Url.Action("Index", "Stock")">Price checker &raquo;</a></p>
     </div>
 </div>
