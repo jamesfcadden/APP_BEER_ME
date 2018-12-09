@@ -7,6 +7,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using APP_BEER_ME.DAL;
 using System.Data.Entity.Infrastructure.Interception;
+using System.Web.Http;
 
 
 namespace APP_BEER_ME
@@ -15,6 +16,7 @@ namespace APP_BEER_ME
     {
         protected void Application_Start()
         {
+            GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
