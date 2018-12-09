@@ -23,7 +23,7 @@ namespace APP_BEER_ME
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-bootswatch.css",
                       "~/Content/site.css"));
         }
     }
