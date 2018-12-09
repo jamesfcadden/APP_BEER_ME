@@ -23,6 +23,9 @@
         <th>
             Units
         </th>
+        <th>
+            Price per Unit
+        </th>
         <th></th>
     </tr>
 
@@ -35,15 +38,18 @@
             @Html.DisplayFor(modelItem => item.Shop.ShopName)
         </td>
         <td>
-            €@Html.DisplayFor(modelItem => item.Price)
+            @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            Units
+            @Math.Round(((item.Beer.Volume * (item.Beer.ABV / 100)) / 10), 1, MidpointRounding.AwayFromZero)            
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StockID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StockID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StockID })
+            @Math.Round((((item.Beer.Volume * (item.Beer.ABV / 100)) / 10) / item.Price), 2, MidpointRounding.AwayFromZero)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.StockID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.StockID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.StockID })
         </td>
     </tr>
 }

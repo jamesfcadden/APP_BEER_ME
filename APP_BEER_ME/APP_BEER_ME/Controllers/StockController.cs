@@ -146,10 +146,10 @@ namespace APP_BEER_ME.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult CalcUnits() //units of alcohol per drink. Using the Irish definition of Units which differs slightly from the UK definition.
-        {
+        //public ActionResult CalcUnits() //units of alcohol per drink. Using the Irish definition of Units which differs slightly from the UK definition.
+        //{
 
-        }
+        //}
 
         protected override void Dispose(bool disposing)
         {
