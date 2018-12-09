@@ -19,19 +19,85 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Beer.Style)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beer.Style)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beer.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beer.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beer.Brewery)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beer.Brewery)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beer.Container)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beer.Container)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beer.Volume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beer.Volume)ml
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Beer.ABV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Beer.ABV)%
+        </dd>
+
+        <br />
+
+        <dt>
             @Html.DisplayNameFor(model => model.Shop.ShopName)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Shop.ShopName)
         </dd>
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Shop.ShopAddress)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Shop.ShopAddress)
+        </dd>
+
+        <br />
+        
         <dt>
             @Html.DisplayNameFor(model => model.Price)
         </dt>
 
         <dd>
-            €@Html.DisplayFor(model => model.Price)
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt>
+            Price per Unit
+        </dt>
+        <dd>
+            
         </dd>
 
     </dl>

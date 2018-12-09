@@ -14,10 +14,8 @@ namespace APP_BEER_ME.Models
         [Display(Name = "Shop Name")]
         public string ShopName { get; set; }
         [Display(Name = "Shop Address")]
-       [DisplayFormat ()]
         public string ShopAddress { get; set; }
 
         public virtual ICollection<Stock> Stocks { get; set; }
-        
     }
 }
