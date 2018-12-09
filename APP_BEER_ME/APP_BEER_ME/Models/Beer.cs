@@ -22,7 +22,6 @@ namespace APP_BEER_ME.Models
         public string Brewery { get; set; }
         [Required(ErrorMessage = "The Container field is required ! ")]
         public Container Container { get; set; }
-        [Display(Name = "Volume (ml)")]
         public int Volume { get; set; }
         [Required(ErrorMessage = "The ABV field is required ! ")]
         public double ABV { get; set; }       
