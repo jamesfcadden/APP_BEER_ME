@@ -17,5 +17,6 @@ namespace APP_BEER_ME.Models
         public string ShopAddress { get; set; }
 
         public virtual ICollection<Stock> Stocks { get; set; }
+        
     }
 }
