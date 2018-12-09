@@ -9,6 +9,7 @@ namespace APP_BEER_ME.Models
 {
     public class Stock
     {
+        [Required]
         public int StockID { get; set; }
         public int BeerID { get; set; }
         public int ShopID { get; set; }
