@@ -38,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.Shop.ShopName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Price)
+            €@Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
             @Math.Round(((item.Beer.Volume * (item.Beer.ABV / 100)) / 10), 1, MidpointRounding.AwayFromZero)            
