@@ -11,8 +11,10 @@ namespace APP_BEER_ME.Models
     {
         [Key]
         public int ShopID { get; set; }
+        [Required]
         [Display(Name = "Shop Name")]
         public string ShopName { get; set; }
+        [Required]
         [Display(Name = "Shop Address")]
         public string ShopAddress { get; set; }
 
