@@ -10,7 +10,7 @@ namespace APP_BEER_ME.DAL
 {
     public class APP_BEER_MEContext : DbContext
     {
-        public APP_BEER_MEContext() : base("APP_BEER_MEContext")
+        public APP_BEER_MEContext() : base("AzureContext")
         {
 
         }
