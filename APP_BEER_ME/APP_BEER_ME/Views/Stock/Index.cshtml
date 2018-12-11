@@ -44,7 +44,7 @@
             @Math.Round(((item.Beer.Volume * (item.Beer.ABV / 100)) / 10), 1, MidpointRounding.AwayFromZero)            
         </td>
         <td>
-            €@Math.Round((((item.Beer.Volume * (item.Beer.ABV / 100)) / 10) / item.Price), 2, MidpointRounding.AwayFromZero)
+            €@Math.Round( (item.Price /((item.Beer.Volume * (item.Beer.ABV / 100)) / 10)  ), 2, MidpointRounding.AwayFromZero)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.StockID }) |
