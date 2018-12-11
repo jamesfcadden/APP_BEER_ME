@@ -1,18 +1,39 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Company Address";
 }
 <h2>@ViewBag.Title</h2>
-
 <address>
-
-    IT Tallaght 
-    Blessington Rd, Tallaght,<br />
-    Dublin 24, D24 FKT9y<br />
-    <abbr title="Phone">P: </abbr>
-    425.555.0100
+    <h4>
+        IT Tallaght
+        Blessington Rd, Tallaght,<br />
+        Dublin 24, D24 FKT9y<br />
+        <abbr title="Phone"></abbr>
+    </h4>
 </address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@it tallaght.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@ittallaght.com</a>
-</address>
+<h5>
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@ittallaght.com</a><br /> <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@ittallaght.com</a>
+    </address>
+</h5>
+<div id="container">
+    <form id="contactForm">
+        <h4>Contact Us!</h4>
+        <p>Please fill in all required fields</p>
+        <p>
+            Name <input id="name" type="text" name="name">
+        </p>
+        <p>
+            Email <input id="email" type="email" name="email">
+        </p>
+        <p>
+            Notes <textarea id="notes" name="notes"></textarea>
+        </p>
+        <p>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Submit" class="btn btn-default" />
+                </div>
+            </div>
+        </p>
+    </form>
+</div>
