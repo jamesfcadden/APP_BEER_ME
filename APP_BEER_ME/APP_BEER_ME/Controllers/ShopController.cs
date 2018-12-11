@@ -32,7 +32,7 @@ namespace APP_BEER_ME.Controllers
                     break;
             }
 
-            return View(db.Shops.ToList());
+            return View(shops.ToList());
         }
 
         // GET: Shop/Details/5
