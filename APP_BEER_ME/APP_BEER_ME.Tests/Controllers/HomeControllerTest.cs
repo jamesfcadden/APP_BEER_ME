@@ -35,7 +35,7 @@ namespace APP_BEER_ME.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.AreEqual("We are three beer enthusiasts.", result.ViewBag.Message);
         }
 
         [TestMethod]

@@ -15,6 +15,20 @@ namespace APP_BEER_ME.Controllers
     {
         private APP_BEER_MEContext db = new APP_BEER_MEContext();
 
+        public double CalcUnits(double ABV, int Volume)
+        {
+            double Units = 0;
+            Units = Volume * (ABV / 100);
+            return Units;
+        }
+
+        public double CalcPricePerUnit(double ABV, int Volume, double Price)
+        {
+            double PricePerUnit = 0;
+            PricePerUnit = (Volume * (ABV / 100)) / Price;
+            return PricePerUnit;
+        }
+
         // GET: Stock
         public ActionResult Index(string sortOrder)
         {
