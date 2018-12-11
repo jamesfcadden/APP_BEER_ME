@@ -16,9 +16,19 @@ namespace APP_BEER_ME.Controllers
         private APP_BEER_MEContext db = new APP_BEER_MEContext();
 
         // GET: Stock
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "shopname_desc" : "";
+
             var stocks = db.Stocks.Include(s => s.Beer).Include(s => s.Shop);
+
+            switch (sortOrder)
+            {
+                default:
+                    stocks = stocks.OrderBy(s => s.Shop.ShopName);
+                    break;
+            }
+
             return View(stocks.ToList());
         }
 
