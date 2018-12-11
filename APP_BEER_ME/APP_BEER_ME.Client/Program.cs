@@ -29,7 +29,7 @@ namespace APP_BEER_ME.Client
 
 
             GetABeersSortedByBeerNameAsync(myClient).Wait();
-            // GetAllBeersSumAmount(myClient).Wait();
+           
             Console.ReadLine();
         }
         static async Task GetABeersSortedByBeerNameAsync(HttpClient myClient)

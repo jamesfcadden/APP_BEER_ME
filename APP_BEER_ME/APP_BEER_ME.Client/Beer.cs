@@ -26,6 +26,6 @@ namespace APP_BEER_ME.Client
         [Required(ErrorMessage = "The ABV field is required ! ")]
         public double ABV { get; set; }
 
-      //  public virtual ICollection<Stock> Stocks { get; set; }
+      
     }
 }
