@@ -18,14 +18,23 @@ namespace APP_BEER_ME.Controllers
         private APP_BEER_MEContext db = new APP_BEER_MEContext();
 
         // GET: Beer
-        public ViewResult Index(string searchstring)
+        public ViewResult Index(string sortOrder, string searchString)
         {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+
             var beers = from b in db.Beers
                         select b;
 
-            if (!String.IsNullOrEmpty(searchstring))
+            switch (sortOrder)
             {
-                beers = beers.Where(b => b.Name.Contains(searchstring) || b.Style.Contains(searchstring));
+                default:
+                    beers = beers.OrderBy(s => s.Name);
+                    break;
+            }
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                beers = beers.Where(b => b.Name.Contains(searchString) || b.Style.Contains(searchString) || b.Brewery.Contains(searchString));
             }
 
             return View(beers.ToList());

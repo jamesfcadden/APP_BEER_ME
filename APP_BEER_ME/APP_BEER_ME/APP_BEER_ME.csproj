@@ -227,6 +227,7 @@
     <Content Include="Content\favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\BeerME.png" />
     <Content Include="Images\CanYouBeerMeNow.jpg" />
     <Content Include="Images\canyoubeermenow.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
