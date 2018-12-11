@@ -21,6 +21,9 @@
             @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Beer.Container)
+        </th>
+        <th>
             Units
         </th>
         <th>
@@ -39,6 +42,9 @@
         </td>
         <td>
             €@Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Beer.Container)
         </td>
         <td>
             @Math.Round(((item.Beer.Volume * (item.Beer.ABV / 100)) / 10), 1, MidpointRounding.AwayFromZero)            
