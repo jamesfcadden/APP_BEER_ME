@@ -16,11 +16,14 @@ namespace APP_BEER_ME
     {
         protected void Application_Start()
         {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
             AreaRegistration.RegisterAllAreas();
+
+            GlobalConfiguration.Configure(WebApiConfig.Register);
+
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
             DbInterception.Add(new APP_BEER_MEInterceptorTransientErrors());
             DbInterception.Add(new APP_BEER_MEInterceptorLogging());
         }

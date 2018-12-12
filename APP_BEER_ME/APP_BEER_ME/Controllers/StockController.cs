@@ -25,7 +25,7 @@ namespace APP_BEER_ME.Controllers
         public double CalcPricePerUnit(double ABV, int Volume, double Price)
         {
             double PricePerUnit = 0;
-            PricePerUnit = (Volume * (ABV / 100)) / Price;
+            PricePerUnit = Price / (Volume * (ABV / 100));
             return PricePerUnit;
         }
 

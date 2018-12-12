@@ -13,13 +13,15 @@ using APP_BEER_ME.Models;
 
 namespace APP_BEER_ME.Controllers.API
 {
+ 
     public class StocksController : ApiController
     {
         private APP_BEER_MEContext db = new APP_BEER_MEContext();
 
+        
         // GET: api/Stocks
         public IQueryable<Stock> GetStocks()
-        {
+        { 
             return db.Stocks;
         }
 
