@@ -4,10 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace APP_BEER_ME.Models
 {
     public enum Container { Bottle, Can }
+
+
     public class Beer
     {
         [Key]
@@ -24,7 +27,7 @@ namespace APP_BEER_ME.Models
         public Container Container { get; set; }
         public int Volume { get; set; }
         [Required(ErrorMessage = "The ABV field is required ! ")]
-        public double ABV { get; set; }       
+        public double ABV { get; set; }
 
         public virtual ICollection<Stock> Stocks { get; set; }
     }

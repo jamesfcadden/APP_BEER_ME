@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
+using System.Web.Mvc;
 using APP_BEER_ME.DAL;
 using APP_BEER_ME.Models;
 
@@ -18,9 +19,12 @@ namespace APP_BEER_ME.Controllers.API
         private APP_BEER_MEContext db = new APP_BEER_MEContext();
 
         // GET: api/Beers
-        public IQueryable<Beer> GetBeers()
+        [ResponseType(typeof(IEnumerable<String>))]
+        [System.Web.Mvc.HttpGet]
+        public IHttpActionResult GetBeers()
         {
-            return db.Beers;
+            var beers = db.Beers.Select(b => b.Name);
+            return Ok(beers);
         }
 
         // GET: api/Beers/5
